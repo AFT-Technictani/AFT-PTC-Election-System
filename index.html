@@ -6,78 +6,50 @@
   <title>ระบบเลือกตั้งนายกองค์การนักวิชาชีพฯ - วิทยาลัยเทคนิคปัตตานี</title>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* ตั้งค่าให้ body เต็มหน้าจอและใช้ flex จัดกลาง */
-    body, html {
+    body, html { height: 100%; margin: 0; font-family: 'Prompt', sans-serif; background-color: #1a1a1a; }
+    
+    /* สไตล์สำหรับหน้า Landing */
+    #landing-page {
       height: 100%;
-      margin: 0;
-      font-family: 'Prompt', sans-serif;
-      background-color: #1a1a1a;
-      display: flex;
-      justify-content: center; /* กึ่งกลางแนวนอน */
-      align-items: center;     /* กึ่งกลางแนวตั้ง */
-      overflow: auto;          /* ป้องกันล้นหน้าจอ */
-    }
-
-    /* Container ควบคุมเนื้อหา */
-    .container {
-      text-align: center;
-      width: 90%;
-      max-width: 500px;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
-    /* ภาพแสดงความอาลัย */
-    .memorial-image {
-      width: 100%;
-      height: auto;
-      margin-bottom: 30px;
-      border: 1px solid #333;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-      display: block;
-    }
+    .memorial-image { width: 90%; max-width: 500px; height: auto; margin-bottom: 30px; border: 1px solid #333; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); }
 
-    /* สไตล์ปุ่มเข้าสู่เว็บไซต์ */
     .btn-enter {
-      display: inline-block;
-      padding: 15px 40px;
-      background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
-      color: #000;
-      text-decoration: none;
-      font-size: 17px;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+      color: #000; text-decoration: none; font-size: 17px; font-weight: 600; border-radius: 50px;
+      transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.4); cursor: pointer;
     }
 
-    .btn-enter:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(255,255,255,0.2);
-    }
+    .btn-enter:hover { transform: scale(1.05); }
 
-    .footer-text {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #666;
-    }
+    /* สไตล์สำหรับส่วน iframe (ซ่อนไว้ก่อน) */
+    #content-page { display: none; width: 100%; height: 100%; }
+    iframe { width: 100%; height: 100%; border: 0; }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- ภาพแสดงความอาลัย -->
+  <div id="landing-page">
     <img src="https://lh5.googleusercontent.com/d/15as2XiAMTMhmKvGb1yKRCpUADcio7Kqc" alt="ภาพแสดงความอาลัย" class="memorial-image">
-
-    <!-- ปุ่มเข้าสู่ระบบ -->
-    <a href="https://script.google.com/macros/s/AKfycbzMaOeUgPgYHXWSsKuMyJGDelhhx06Fd_RwU9pwZIZagyZanX2kS_pe5lWiZoqgwKm0GQ/exec" class="btn-enter">
-      เข้าสู่เว็บไซต์
-    </a>
-
-    
+    <button onclick="enterSite()" class="btn-enter">เข้าสู่เว็บไซต์</button>
   </div>
+
+  <div id="content-page">
+    <iframe src="https://script.google.com/macros/s/AKfycbzMaOeUgPgYHXWSsKuMyJGDelhhx06Fd_RwU9pwZIZagyZanX2kS_pe5lWiZoqgwKm0GQ/exec"></iframe>
+  </div>
+
+  <script>
+    function enterSite() {
+      document.getElementById('landing-page').style.display = 'none';
+      document.getElementById('content-page').style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
