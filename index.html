@@ -8,6 +8,7 @@
   <style>
     body, html { height: 100%; margin: 0; font-family: 'Prompt', sans-serif; background-color: #1a1a1a; }
     
+    /* สไตล์สำหรับหน้า Landing */
     #landing-page {
       height: 100%;
       display: flex;
@@ -22,10 +23,14 @@
     .btn-enter {
       display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
       color: #000; text-decoration: none; font-size: 17px; font-weight: 600; border-radius: 50px;
-      transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.4); cursor: pointer; border: none;
+      transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.4); cursor: pointer;
     }
 
     .btn-enter:hover { transform: scale(1.05); }
+
+    /* สไตล์สำหรับส่วน iframe (ซ่อนไว้ก่อน) */
+    #content-page { display: none; width: 100%; height: 100%; }
+    iframe { width: 100%; height: 100%; border: 0; }
   </style>
 </head>
 <body>
@@ -35,10 +40,14 @@
     <button onclick="enterSite()" class="btn-enter">เข้าสู่เว็บไซต์</button>
   </div>
 
+  <div id="content-page">
+    <iframe src="xxx"></iframe>
+  </div>
+
   <script>
     function enterSite() {
-      // เปลี่ยนหน้าเว็บไปที่ลิงก์โดยตรง
-      window.location.href = "https://script.google.com/macros/s/AKfycbzMaOeUgPgYHXWSsKuMyJGDelhhx06Fd_RwU9pwZIZagyZanX2kS_pe5lWiZoqgwKm0GQ/exec";
+      document.getElementById('landing-page').style.display = 'none';
+      document.getElementById('content-page').style.display = 'block';
     }
   </script>
 
