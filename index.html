@@ -1,45 +1,37 @@
 <!DOCTYPE html>
-<html lang="th">
+
+<html>
+
 <head>
-  <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ระบบเลือกตั้งนายกองค์การนักวิชาชีพฯ - วิทยาลัยเทคนิคปัตตานี</title>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    body, html { height: 100%; margin: 0; font-family: 'Prompt', sans-serif; background-color: #1a1a1a; color: white; }
-    
-    #landing-page {
-      height: 100%; display: flex; flex-direction: column; justify-content: center;
-      align-items: center; text-align: center;
-    }
 
-    .memorial-image { width: 90%; max-width: 500px; height: auto; margin-bottom: 20px; border: 1px solid #333; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); }
+  <base target="_top">
 
-    #countdown { font-size: 1.2em; margin-bottom: 20px; color: #ffcc00; }
-  </style>
+
+
+  <!-- ใส่ชื่อเว็บไซต์ -->
+
+  <title>ระบบเลือกตั้งนายกองค์การนักวิชาชีพฯ วิทยาลัยเทคนิคปัตตานี</title>
+
+
+
+  <!-- ใส่โลโก้ (Favicon) -->
+
+  <link rel="icon" type="image/png" href="https://lh5.googleusercontent.com/d/1WjbuEgLhA21hRRqFtSgNLWrYWP94K8NM">
+
 </head>
+
 <body>
 
-  <div id="landing-page">
-    <img src="https://lh5.googleusercontent.com/d/15as2XiAMTMhmKvGb1yKRCpUADcio7Kqc" alt="ภาพแสดงความอาลัย" class="memorial-image">
-    <div id="countdown">กำลังเข้าสู่เว็บไซต์ใน 5 วินาที...</div>
-  </div>
+  <iframe 
 
-  <script>
-    var seconds = 5; // ตั้งเวลานับถอยหลัง
-    var countdownElement = document.getElementById("countdown");
+    style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;" 
 
-    var timer = setInterval(function() {
-      seconds--;
-      countdownElement.innerHTML = "กำลังเข้าสู่เว็บไซต์ใน " + seconds + " วินาที...";
+    src="https://script.google.com/macros/s/AKfycbzMaOeUgPgYHXWSsKuMyJGDelhhx06Fd_RwU9pwZIZagyZanX2kS_pe5lWiZoqgwKm0GQ/exec">
 
-      if (seconds <= 0) {
-        clearInterval(timer);
-        // เปลี่ยนหน้าโดยไม่ทิ้งประวัติ (ไม่ให้กดปุ่มย้อนกลับแล้วมาติดหน้านับถอยหลัง)
-        window.location.replace("https://script.google.com/macros/s/AKfycbzMaOeUgPgYHXWSsKuMyJGDelhhx06Fd_RwU9pwZIZagyZanX2kS_pe5lWiZoqgwKm0GQ/exec");
-      }
-    }, 1000);
-  </script>
+  </iframe>
 
 </body>
+
 </html>
