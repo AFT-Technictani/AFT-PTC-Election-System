@@ -4,13 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- ใส่ชื่อเว็บไซต์ -->
   <title>ระบบเลือกตั้งนายกองค์การนักวิชาชีพฯ วิทยาลัยเทคนิคปัตตานี</title>
 
-  <!-- ใส่โลโก้ (Favicon) -->
   <link rel="icon" type="image/png" href="https://lh5.googleusercontent.com/d/1WjbuEgLhA21hRRqFtSgNLWrYWP94K8NM">
 
-  <!-- ดึงฟอนต์ Prompt จาก Google Fonts ให้หน้าเว็บดูสวยงาม -->
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -60,9 +57,28 @@
       margin: 0;
     }
 
+    /* กล่องแสดงเวลาเปิดระบบ (ดีไซน์ใหม่) */
+    .time-box {
+      background-color: #f0f7ff; /* พื้นหลังสีฟ้าอ่อน */
+      color: #0056b3; /* ตัวหนังสือสีฟ้าเข้ม */
+      border: 1px solid #cce3fd; /* ขอบกล่องสีฟ้า */
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin: 25px auto 10px auto;
+      display: inline-block;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .time-box strong {
+      font-size: 16px;
+      color: #004494;
+      font-weight: 600;
+    }
+
     /* อนิเมชันวงกลมโหลดข้อมูล */
     .spinner {
-      margin: 30px auto 0;
+      margin: 25px auto 0;
       width: 40px;
       height: 40px;
       border: 4px solid #f3f3f3;
@@ -82,7 +98,13 @@
   <div class="maintenance-card">
     <div class="icon">🚧</div>
     <h1>ขออภัย ระบบกำลังปิดปรับปรุง</h1>
-    <p>ระบบเลือกตั้งนายกองค์การนักวิชาชีพฯ<br>วิทยาลัยเทคนิคปัตตานี<br>กำลังดำเนินการอัปเดตเพื่อเพิ่มประสิทธิภาพ<br>กรุณากลับมาใช้งานใหม่อีกครั้งในภายหลัง</p>
+    <p>ระบบเลือกตั้งนายกองค์การนักวิชาชีพฯ<br>วิทยาลัยเทคนิคปัตตานี<br>กำลังดำเนินการอัปเดตเพื่อเพิ่มประสิทธิภาพ</p>
+    
+    <div class="time-box">
+      ⏳ จะเปิดให้ใช้งานอีกครั้งใน<br>
+      <strong>วันที่ 28 มิถุนายน 2569 เวลา 15.00 น.</strong>
+    </div>
+
     <div class="spinner"></div>
   </div>
 
