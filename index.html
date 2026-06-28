@@ -7,27 +7,30 @@
 
   <title>ระบบเลือกตั้งนายกองค์การนักวิชาชีพฯ วิทยาลัยเทคนิคปัตตานี</title>
 
+  <meta property="og:title" content="ระบบเลือกตั้งนายกองค์การนักวิชาชีพฯ วิทยาลัยเทคนิคปัตตานี">
+  <meta property="og:description" content="หน้าต่างสำหรับเข้าสู่ระบบเลือกตั้งออนไลน์">
+  <meta property="og:image" content="https://lh5.googleusercontent.com/d/15as2XiAMTMhmKvGb1yKRCpUADcio7Kqc">
+  <meta property="og:type" content="website">
+
   <link rel="icon" type="image/png" href="https://lh5.googleusercontent.com/d/1WjbuEgLhA21hRRqFtSgNLWrYWP94K8NM">
 
   <style>
-    /* ตั้งค่าไม่ให้มีขอบขาว */
     body, html {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      font-family: 'Sarabun', sans-serif; /* แนะนำให้ใช้ฟอนต์ภาษาไทย */
+      font-family: sans-serif;
     }
 
-    /* CSS สำหรับหน้าจอโหลด (Splash Screen) */
     #splash-screen {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: #2c2c2c; /* สีพื้นหลังโทนเข้มให้เข้ากับรูปภาพ */
+      background-color: #2c2c2c; 
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -37,7 +40,6 @@
       text-align: center;
     }
 
-    /* CSS สำหรับรูปภาพ */
     #splash-screen img {
       max-width: 90%;
       max-height: 70vh;
@@ -45,7 +47,6 @@
       margin-bottom: 20px;
     }
 
-    /* CSS สำหรับ Iframe */
     #main-iframe {
       position: absolute;
       top: 0;
@@ -53,7 +54,7 @@
       width: 100%;
       height: 100%;
       border: 0;
-      display: none; /* ซ่อนไว้ก่อนจนกว่าจะนับถอยหลังเสร็จ */
+      display: none; 
     }
   </style>
 </head>
@@ -61,7 +62,6 @@
 
   <div id="splash-screen">
     <img src="https://lh5.googleusercontent.com/d/15as2XiAMTMhmKvGb1yKRCpUADcio7Kqc" alt="น้อมรำลึก">
-    
     <h3>กำลังเข้าสู่เว็บไซต์ใน <span id="countdown">5</span> วินาที...</h3>
   </div>
 
@@ -71,24 +71,19 @@
   </iframe>
 
   <script>
-    // ตั้งค่าเวลาเริ่มต้น (วินาที)
     let timeLeft = 5;
-    
-    // ดึง Element ต่างๆ มาเพื่อจัดการ
     const countdownElement = document.getElementById('countdown');
     const splashScreen = document.getElementById('splash-screen');
     const mainIframe = document.getElementById('main-iframe');
 
-    // สร้างฟังก์ชันนับถอยหลังทุกๆ 1 วินาที (1000 มิลลิวินาที)
     const timer = setInterval(() => {
-      timeLeft--; // ลดเวลาลง 1 วินาที
-      countdownElement.textContent = timeLeft; // อัปเดตตัวเลขบนหน้าเว็บ
+      timeLeft--;
+      countdownElement.textContent = timeLeft;
 
-      // เมื่อเวลาหมด (เท่ากับหรือน้อยกว่า 0)
       if (timeLeft <= 0) {
-        clearInterval(timer); // หยุดการนับเวลา
-        splashScreen.style.display = 'none'; // ซ่อนหน้าโหลด
-        mainIframe.style.display = 'block'; // แสดง Iframe
+        clearInterval(timer);
+        splashScreen.style.display = 'none';
+        mainIframe.style.display = 'block';
       }
     }, 1000);
   </script>
